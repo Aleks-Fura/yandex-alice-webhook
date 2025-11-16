@@ -87,12 +87,10 @@ def webhook():
 @app.route('/home-welcome', methods=['POST'])
 def home_welcome():
     try:
-                text = ""  # Инициализация переменной
         data = request.json
         logger.info(f"Received home welcome request: {data}")
         
-        # Варианты приветствий для одного
-        GREETINGS_ALONE = [
+                GREETINGS_ALONE = [
             "Наконец-то! Ну как там, выжил на этом заводе?",
             "О, ты вернулся! Как день прошел? Расскажи, что там творилось?",
             "Привет-привет! Ну что, как прошла смена?"
