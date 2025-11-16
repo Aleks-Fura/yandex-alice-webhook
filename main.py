@@ -87,6 +87,7 @@ def webhook():
 @app.route('/home-welcome', methods=['POST'])
 def home_welcome():
     try:
+                text = ""  # Инициализация переменной
         data = request.json
         logger.info(f"Received home welcome request: {data}")
         
