@@ -46,8 +46,10 @@ def webhook():
         logger.info(f"Received request: {data}")
         
         # Получаем текущее состояние сессии
+                logger.info(f"State object: {data.get('state', {})}")
         session_state = data.get('state', {}).get('session', {})
         attempts = session_state.get('attempts', 0)
+                logger.info(f"Session state: {session_state}, attempts: {attempts}")
         
         # Извлекаем текст и intent
         request_data = data.get('request', {})
